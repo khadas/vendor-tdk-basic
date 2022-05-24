@@ -69,9 +69,11 @@ cc_prebuilt_library_shared {
     multilib: {
         lib32: {
             srcs: ["ca_export_arm/lib_android/libteec.so"],
+            export_include_dirs: ["ca_export_arm/include"]
         },
         lib64: {
             srcs: ["ca_export_arm64/lib_android/libteec.so"],
+            export_include_dirs: ["ca_export_arm64/include"]
         },
     },
     compile_multilib: "both",
@@ -86,9 +88,11 @@ cc_prebuilt_library_shared {
     multilib: {
         lib32: {
             srcs: ["ca_export_arm/lib_android/libteec_sys.so"],
+            export_include_dirs: ["ca_export_arm/include"]
         },
         lib64: {
             srcs: ["ca_export_arm64/lib_android/libteec_sys.so"],
+            export_include_dirs: ["ca_export_arm64/include"]
         },
     },
     compile_multilib: "both",
