@@ -10,7 +10,7 @@ on init
 on post-fs
 	restorecon_recursive /mnt/vendor/tee
 
-on property:vold.post_fs_data_done=1
+on post-fs-data
 	start vendor.tee_supplicant
 
 service vendor.tee_supplicant /vendor/bin/tee-supplicant
