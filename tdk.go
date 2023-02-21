@@ -3,13 +3,13 @@ package tdk
 import (
     "android/soong/android"
     "android/soong/cc"
-    "fmt"
+    //"fmt"
     "github.com/google/blueprint/proptools"
     "strconv"
 )
 
 func init() {
-    fmt.Println("init");
+    //fmt.Println("init");
     android.RegisterModuleType("tdk_variant", TdkVariantDefaultsFactory)
     android.RegisterModuleType("tdk_systemext", TdkSysExtDefaultsFactory)
 }
@@ -51,9 +51,9 @@ func TdkSysExtDefaults(ctx android.LoadHookContext) {
     AndroidVersion := ctx.AConfig().PlatformVersionName()
     AndroidVersionInt,err := strconv.Atoi(AndroidVersion)
     if err != nil {
-        fmt.Printf("%v fail to convert", AndroidVersionInt)
+        //fmt.Printf("%v fail to convert", AndroidVersionInt)
     } else {
-        fmt.Println("CheckDefaults AndroidVersion:", AndroidVersionInt)
+        //fmt.Println("CheckDefaults AndroidVersion:", AndroidVersionInt)
     }
     if AndroidVersionInt > 10 {
         type props struct {
