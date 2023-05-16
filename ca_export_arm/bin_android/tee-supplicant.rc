@@ -22,3 +22,4 @@ service vendor.tee_supplicant /vendor/bin/tee-supplicant
 	user root
 	group system
 	seclabel u:r:tee:s0
+	shutdown critical
