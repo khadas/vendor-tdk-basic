@@ -1,4 +1,4 @@
 # AMLOGIC TDK CHANGELOG
 
-## TDK version 3.8.0
-	* Based on OPTEE v3.8.0
+## TDK version 3.18.0
+	* Based on OPTEE Client v3.18.0
