@@ -31,6 +31,13 @@
 
 typedef void* TEEC_SocketHandle;
 
+typedef struct {
+	uint32_t magic;
+	TEEC_Context teec_ctx;
+	uint32_t pipe_id;
+	uint32_t pipe_type;
+} data_pipe_descriptor_t;
+
 /**
  * TEEC_SocketOpen() - Open a socket handle for communication
  *
@@ -80,5 +87,25 @@ TEEC_Result TEEC_SocketRead(TEEC_SocketHandle handle, void *buf, size_t *len);
  * @return other value is failed
  */
 TEEC_Result TEEC_SocketWrite(TEEC_SocketHandle handle, const void *buf, size_t *len);
+
+/**
+ * TEEC_SocketListen() - Start listen
+ *
+ * @backlog, max connection count
+ *
+ * @return TEEC_SUCCESS on success
+ * @return other value is failed
+ */
+TEEC_Result TEEC_SocketListen(uint32_t backlog);
+
+/**
+ * TEEC_SocketAccept() - Accept a socket handle for communication
+ *
+ * @param handle, out parameter return a socket handle
+ *
+ * @return TEEC_SUCCESS on success
+ * @return other value is failed
+ */
+TEEC_Result TEEC_SocketAccept(TEEC_SocketHandle *handle);
 
 #endif
